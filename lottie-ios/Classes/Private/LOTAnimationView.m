@@ -76,7 +76,7 @@
     CFTimeInterval offsetTime =  ((timeOffset != 0) ?
                                   timeOffset / speed :
                                   timeOffset);
-    _layer.beginTime = CACurrentMediaTime() - offsetTime;
+    _layer.beginTime = [_layer.superlayer convertTime:CACurrentMediaTime() fromLayer:nil] - offsetTime;
   }
 }
 
